@@ -2,9 +2,9 @@ import retrofit2.Call;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
-
-import java.util.Iterator;
 import java.util.ListIterator;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 /**
  * demonstrates the use of the IPMA API for weather forecast
@@ -13,6 +13,7 @@ public class WeatherStarter_v2 {
 
     //todo: should generalize for a city passed as argument
     private static int CITY_ID_AVEIRO = 1010500;
+    private static final Logger logger = LogManager.getLogger(WeatherStarter_v2.class);
 
     public static void  main(String[] args ) {
 
@@ -22,6 +23,14 @@ public class WeatherStarter_v2 {
         }
         else
             getWeather(CITY_ID_AVEIRO);
+
+        logger.trace("Trace logging test");
+        logger.debug("Debug logging test");
+        logger.info("Info logging test");
+        logger.error("Error logging test");
+        logger.fatal("Fatal logging test");
+
+
 
 
     }
